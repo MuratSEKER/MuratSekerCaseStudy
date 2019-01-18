@@ -1,0 +1,40 @@
+﻿<div class="row">
+    <div class="col-md-6 offset-3">
+        <h2>{{title}}</h2>
+    </div>
+    <div class="col-md-6 offset-md-3">
+        <h3>Upload Your File</h3>
+        <div class="card card-body bg-light p-2">
+            <form asp-controller="Home" asp-action="Index" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="All"> </div>
+                <div class="form-group">
+                    <label asp-for="FileToUpload">File:</label>
+                    <input type="file" name="FileToUpload" class="form-control" />
+                    <span asp-validation-for="FileToUpload" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FileToUpload">File Format to Write: </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="SelectedFileStorageType" value="1" checked>Json
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="SelectedFileStorageType" value="2">XML
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FileToUpload">Sort / Group Options: </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="SelectedSortGroup" value="1" checked>Grouping
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="SelectedSortGroup" value="2">Sorting
+                    </label>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-upload"></i> Upload File</button>
+                    <div class="text-success"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
